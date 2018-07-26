@@ -1,0 +1,5 @@
+build/
+devel/
+*.pyc
+*.bin
+*.csv
