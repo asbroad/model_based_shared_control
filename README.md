@@ -1,6 +1,12 @@
 # Model-based Shared Control
 Model-based shared control of human-machine systems.  For detailed information about this system and the theory behind it, please read our corresponding paper.  The code in this repository can be used to replicate the experiments described in our work.
 
+### Description of the System
+
+<img src=./images/environment.png alt="System and Environment" width="400px"/> <img src=./images/control_interface.jpeg alt="Control Interface" width="300px"/>
+
+Our system is validated with a simulated lunar lander, which can be controlled with a PS3 controller (see above).  Our shared control framework relies on a learned model of the system and control dynamics.  The model of the joint system is learned from demonstration data and can be learned offline or online.  This model is computed through an approximation to the Koopman Operator.  The control allocation algorithm is based on Maxwell's Demon Algorithm (MDA).  A step-by-step set of instructions for how to run each part of the system can be found in the next section.
+
 ### Installation
 
 1. Clone the Model-based Shared Control repository in a ROS workspace
@@ -13,11 +19,6 @@ Model-based shared control of human-machine systems.  For detailed information a
 ```Shell
   catkin_make
   ```
-
-### Description of the System
-
-Our shared control framework relies on a learned model of the system and control dynamics.  The model of the joint system is learned from demonstration data and can be learned offline or online.  This model is computed through an approximation to the Koopman Operator.  The control allocation algorithm is based on Maxwell's Demon Algorithm (MDA).  A step-by-step set of instructions for how to run each part of the system can be found in the next section.
-
 
 ### Running the System
 1. **Connect PS3 Controller**: To connect your PS3 joystick to your computer, open a terminal and run
