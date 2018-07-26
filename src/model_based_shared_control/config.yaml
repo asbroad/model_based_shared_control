@@ -1,0 +1,3 @@
+user_id: 1
+main_joystick: right # right or left
+inverted: true # true or false

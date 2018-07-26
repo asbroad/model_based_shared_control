@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- params -->
+  <rosparam command="load" file="$(find model_based_shared_control)/config.yaml" />
+  <param name="data_path" value="$(find model_based_shared_control)/data/" />
+
+  <!-- launch joy node -->
+  <node pkg="joy" type="joy_node" name="joy_node" />
+
+  <!-- launch open ai lunar lander node -->
+  <node name="lunar_lander" pkg="model_based_shared_control" type="online_model_based_shared_control_script.py" output="screen">
+    <param name="draw_helipad" value="False" />
+    <param name="draw_goal" value="True" />
+    <param name="main_engine_power" value="13.0" />
+    <param name="side_engine_power" value="0.6" />
+    <param name="initial_random" value="1000" />
+    <param name="viewport_w" value="600" />
+    <param name="viewport_h" value="400" />
+    <param name="initial_pos_x" value="10.0" />
+    <param name="initial_pos_y" value="13.3" />
+    <param name="initial_pos_ang" value="0.0" />
+    <param name="initial_goal_x" value="10.0" />
+    <param name="initial_goal_y" value="6.0" />
+  </node>
+
+  <node name="controller" pkg="model_based_shared_control" type="online_model_based_shared_control" output="screen"/>
+
+</launch>
